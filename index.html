@@ -13,11 +13,30 @@
 <style>
 @layer base {
   html, body { margin: 0; padding: 0; }
-  body { overscroll-behavior: none; }
+  html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+    scrollbar-width: auto;
+    scrollbar-color: #0f5132 #e7eeeb;
+  }
   main > :first-child { margin-top: 0 !important; }
   main > :last-child { margin-bottom: 0 !important; }
 }
-::-webkit-scrollbar { display: none; }
+html::-webkit-scrollbar {
+  width: 14px;
+  display: block;
+}
+html::-webkit-scrollbar-track {
+  background: #e7eeeb;
+}
+html::-webkit-scrollbar-thumb {
+  background: #0f5132;
+  border: 3px solid #e7eeeb;
+  border-radius: 999px;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: #0c4128;
+}
 </style>
 <script src="https://cdn.tailwindcss.com"></script>
 <script id="tailwind-config">
